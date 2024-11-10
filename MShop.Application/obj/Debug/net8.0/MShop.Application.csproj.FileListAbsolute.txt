@@ -1,0 +1,15 @@
+C:\Users\thanh\source\repos\MShop\MShop.Application\bin\Debug\net8.0\MShop.Application.deps.json
+C:\Users\thanh\source\repos\MShop\MShop.Application\bin\Debug\net8.0\MShop.Application.dll
+C:\Users\thanh\source\repos\MShop\MShop.Application\bin\Debug\net8.0\MShop.Application.pdb
+C:\Users\thanh\source\repos\MShop\MShop.Application\bin\Debug\net8.0\MShop.Domain.dll
+C:\Users\thanh\source\repos\MShop\MShop.Application\bin\Debug\net8.0\MShop.Domain.pdb
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.csproj.AssemblyReference.cache
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.AssemblyInfoInputs.cache
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.AssemblyInfo.cs
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.csproj.CoreCompileInputs.cache
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Ap.448EDB57.Up2Date
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.dll
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\refint\MShop.Application.dll
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.pdb
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\ref\MShop.Application.dll
