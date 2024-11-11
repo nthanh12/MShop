@@ -25,15 +25,19 @@ namespace MShop.Infrastructure.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
             var product = await _context.Products.FindAsync(id);
-            if (product != null)
+            if (product == null)
             {
-                _context.Products.Remove(product);
-                await _context.SaveChangesAsync();
+                return false; 
             }
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return true;
         }
+
 
         public async Task<PagedResult<Product>> Search_Paging(string searchValue, EnumSearchType searchType, EnumOrderBy orderBy, bool isDescendingOrder, int pageNumber, int pageSize)
         {

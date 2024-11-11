@@ -8,6 +8,7 @@ C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Appli
 C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.AssemblyInfoInputs.cache
 C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.AssemblyInfo.cs
 C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.csproj.CoreCompileInputs.cache
+C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.sourcelink.json
 C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Ap.448EDB57.Up2Date
 C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\MShop.Application.dll
 C:\Users\thanh\source\repos\MShop\MShop.Application\obj\Debug\net8.0\refint\MShop.Application.dll

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MShop.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bdfde2f97abf67f2187c8e8b0ee11a3f3c11e04")]
 [assembly: System.Reflection.AssemblyProductAttribute("MShop.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MShop.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

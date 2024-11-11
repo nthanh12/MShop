@@ -21,7 +21,7 @@ namespace MShop.API.Controllers
             _productService = productService;
             _logger = logger;
         }
-        
+
         [HttpGet]
         public async Task<ActionResult<ApiResponse<PagedResult<ProductDto>>>> GetProducts(string searchValue = "", EnumSearchType searchType = EnumSearchType.All, EnumOrderBy orderBy = EnumOrderBy.ID, bool isDescending = false, int pageNumber = 1, int pageSize = 10)
         {
@@ -45,6 +45,7 @@ namespace MShop.API.Controllers
                 response.Data = products;
                 response.ErrCode = EnumErrCode.Success;
                 response.ErrDescription = ApiMessage.ProductRetrievedSuccessfully;
+                response.TotalDataRecord = products.TotalCount;
 
                 return Ok(response);
             }
@@ -89,28 +90,135 @@ namespace MShop.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct(ProductDto productDto)
+        public async Task<ActionResult<ApiResponse<ProductDto>>> AddProduct(ProductDto productDto)
         {
-            await _productService.AddProductAsync(productDto);
-            return CreatedAtAction(nameof(GetProductById), new { id = productDto.Id }, productDto);
+            var response = new ApiResponse<ProductDto>();
+            try
+            {
+                _logger.LogInformation("Adding a new product");
+
+                if (productDto == null)
+                {
+                    _logger.LogWarning("Product data is null");
+                    response.ErrCode = EnumErrCode.Empty;
+                    response.ErrDescription = ApiMessage.ProductEmpty;
+                    response.ErrDetail = "The product data provided is null or invalid.";
+
+                    return BadRequest(response);
+                }
+                // Kiểm tra tính hợp lệ của dữ liệu sản phẩm (ví dụ: tên và giá trị phải hợp lệ)
+                if (string.IsNullOrEmpty(productDto.Name) || productDto.Price <= 0)
+                {
+                    _logger.LogWarning("Invalid product data");
+                    response.ErrCode = EnumErrCode.Fail;
+                    response.ErrDescription = ApiMessage.DataInvalid;
+                    response.ErrDetail = "Product name cannot be empty and price must be greater than zero.";
+                    return BadRequest(response);
+                }
+
+                await _productService.AddProductAsync(productDto);
+
+                response.Data = productDto;
+                response.ErrCode = EnumErrCode.Success;
+                response.ErrDescription = ApiMessage.ProductCreatedSuccessfully;
+                return CreatedAtAction(nameof(GetProductById), new { id = productDto.Id }, response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error adding new product");
+                var errorResponse = Utils.ActionCatch<ProductDto>(EnumErrCode.Error, ApiMessage.ErrorMsg, ex.Message);
+                return BadRequest(errorResponse);
+            }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, ProductDto productDto)
+        public async Task<ActionResult<ApiResponse<ProductDto>>> UpdateProduct(int id, ProductDto productDto)
         {
-            var existProduct = await _productService.GetProductByIdAsync(id);
-            if (existProduct == null) return NotFound();
-            await _productService.UpdateProductAsync(id, productDto);
-            return NoContent();
+            var response = new ApiResponse<ProductDto>();
+            try
+            {
+                _logger.LogInformation("Check product");
+                if (id <= 0 || productDto == null)
+                {
+                    _logger.LogWarning("Data is null");
+                    response.ErrCode = EnumErrCode.Empty;
+                    response.ErrDescription = ApiMessage.ProductEmpty;
+                    response.ErrDetail = "The product data provided is null or invalid.";
+
+                    return BadRequest(response);
+                }
+                // Kiểm tra tính hợp lệ của dữ liệu sản phẩm (ví dụ: tên và giá trị phải hợp lệ)
+                if (string.IsNullOrEmpty(productDto.Name) || productDto.Price <= 0)
+                {
+                    _logger.LogWarning("Invalid product data");
+                    response.ErrCode = EnumErrCode.Fail;
+                    response.ErrDescription = ApiMessage.DataInvalid;
+                    response.ErrDetail = "Product name cannot be empty and price must be greater than zero.";
+                    return BadRequest(response);
+                }
+                var isChecking = await _productService.UpdateProductAsync(id, productDto);
+
+                if (!isChecking)
+                {
+                    _logger.LogWarning("Product with ID: {id} not found", id);
+                    response.ErrCode = EnumErrCode.DoesNotExist;
+                    response.ErrDescription = ApiMessage.ProductNotFound;
+                    response.ErrDetail = "No product found with the specified ID.";
+                    return NotFound(response);
+                }
+                // Cập nhật sản phẩm
+
+                response.Data = productDto;
+                response.ErrCode = EnumErrCode.Success;
+                response.ErrDescription = ApiMessage.ProductUpdatedSuccessfully;
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating new product");
+                var errorResponse = Utils.ActionCatch<ProductDto>(EnumErrCode.Error, ApiMessage.ErrorMsg, ex.Message);
+                return BadRequest(errorResponse);
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            var existProduct = await _productService.GetProductByIdAsync(id);
-            if (existProduct == null) return NotFound();
-            await _productService.DeleteProductAsync(id);
-            return NoContent();
+            var response = new ApiResponse<ProductDto>();
+            try
+            {
+                _logger.LogInformation("Check product");
+                if (id <= 0)
+                {
+                    _logger.LogWarning("Data is null");
+                    response.ErrCode = EnumErrCode.Empty;
+                    response.ErrDescription = ApiMessage.ProductEmpty;
+                    response.ErrDetail = "The product id data provided is null or invalid.";
+
+                    return NotFound(response);
+                }
+
+                var isChecking = await _productService.DeleteProductAsync(id);
+                if (!isChecking)
+                {
+                    _logger.LogWarning("Product with ID: {id} could not be deleted", id);
+                    response.ErrCode = EnumErrCode.Error;
+                    response.ErrDescription = ApiMessage.ProductNotFound;
+                    response.ErrDetail = "No product found with the specified ID.";
+                    return NotFound(response);
+                }
+
+                response.ErrCode = EnumErrCode.Success;
+                response.ErrDescription = ApiMessage.ProductDeletedSuccessfully;
+                return Ok(response);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating new product");
+                var errorResponse = Utils.ActionCatch<ProductDto>(EnumErrCode.Error, ApiMessage.ErrorMsg, ex.Message);
+                return BadRequest(errorResponse);
+            }
         }
     }
 }

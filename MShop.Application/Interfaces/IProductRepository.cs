@@ -15,6 +15,6 @@ namespace MShop.Application.Interfaces
         Task<Product> GetByIdAsync(int id);
         Task AddAsync(Product product);
         Task UpdateAsync(Product product);
-        Task DeleteAsync(int id);
+        Task<bool> DeleteAsync(int id);
     }
 }

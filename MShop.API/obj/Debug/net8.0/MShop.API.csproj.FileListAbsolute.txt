@@ -134,6 +134,7 @@ C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\MShop.API.AssemblyI
 C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\MShop.API.csproj.CoreCompileInputs.cache
 C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\MShop.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\MShop.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\MShop.API.sourcelink.json
 C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\thanh\source\repos\MShop\MShop.API\obj\Debug\net8.0\staticwebassets\msbuild.MShop.API.Microsoft.AspNetCore.StaticWebAssets.props

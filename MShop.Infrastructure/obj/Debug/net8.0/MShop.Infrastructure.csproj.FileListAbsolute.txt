@@ -11,6 +11,7 @@ C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.In
 C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.Infrastructure.AssemblyInfo.cs
 C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.Infrastructure.sourcelink.json
 C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.In.48A34B7B.Up2Date
 C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\MShop.Infrastructure.dll
 C:\Users\thanh\source\repos\MShop\MShop.Infrastructure\obj\Debug\net8.0\refint\MShop.Infrastructure.dll

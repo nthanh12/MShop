@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,9 @@ namespace MShop.Application.Constants
         public const string ProductUpdatedSuccessfully = "Product updated successfully";
         public const string ProductDeletedSuccessfully = "Product deleted successfully";
         public const string ProductNotMatch = "No products match";
+        public const string ProductEmpty = "Product information is empty";
 
         public const string ErrorMsg = "An error occurred while processing the request.";
+        public const string DataInvalid = "Data is invalid.";
     }
 }

@@ -27,9 +27,15 @@ namespace MShop.Application.Services
             await _productRepository.AddAsync(product);
         }
 
-        public async Task DeleteProductAsync(int id)
+        public async Task<bool> DeleteProductAsync(int id)
         {
-            await _productRepository.DeleteAsync(id);
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product == null)
+            {
+                return false;
+            }
+
+            return await _productRepository.DeleteAsync(id);
         }
 
         public async Task<PagedResult<ProductDto>> GetProductsAsync(string searchValue = "", EnumSearchType searchType = EnumSearchType.All, EnumOrderBy orderBy = EnumOrderBy.ID, bool isDescending = false, int pageNumber = 1, int pageSize = 10)
@@ -58,16 +64,20 @@ namespace MShop.Application.Services
             return productDto;
         }
 
-        public async Task UpdateProductAsync(int id, ProductDto productDto)
+        public async Task<bool> UpdateProductAsync(int id, ProductDto productDto)
         {
             var product = await _productRepository.GetByIdAsync(id);
-            if (product != null )
+            if (product == null)
             {
-                product.Name = productDto.Name;
-                product.Price = productDto.Price;
-
-                await _productRepository.UpdateAsync(product);
+                return false;
             }
+            product.Name = productDto.Name;
+            product.Price = productDto.Price;
+            product.Stock = productDto.Stock;
+            product.Description = productDto.Description;
+
+            await _productRepository.UpdateAsync(product);
+            return true;
         }
     }
 }

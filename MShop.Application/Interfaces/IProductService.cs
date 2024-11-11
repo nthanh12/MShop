@@ -14,7 +14,7 @@ namespace MShop.Application.Interfaces
         Task<PagedResult<ProductDto>> GetProductsAsync(string searchValue = "", EnumSearchType searchType = EnumSearchType.All, EnumOrderBy orderBy = EnumOrderBy.ID, bool isDescending = false, int pageNumber = 1, int pageSize = 10);
         Task<ProductDto> GetProductByIdAsync(int id);
         Task AddProductAsync(ProductDto productDto);
-        Task UpdateProductAsync(int id, ProductDto productDto);
-        Task DeleteProductAsync(int id);
+        Task<bool> UpdateProductAsync(int id, ProductDto productDto);
+        Task<bool> DeleteProductAsync(int id);
     }
 }
