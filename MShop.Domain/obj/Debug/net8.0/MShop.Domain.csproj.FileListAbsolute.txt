@@ -1,6 +1,7 @@
 C:\Users\thanh\source\repos\MShop\MShop.Domain\bin\Debug\net8.0\MShop.Domain.deps.json
 C:\Users\thanh\source\repos\MShop\MShop.Domain\bin\Debug\net8.0\MShop.Domain.dll
 C:\Users\thanh\source\repos\MShop\MShop.Domain\bin\Debug\net8.0\MShop.Domain.pdb
+C:\Users\thanh\source\repos\MShop\MShop.Domain\obj\Debug\net8.0\MShop.Domain.csproj.AssemblyReference.cache
 C:\Users\thanh\source\repos\MShop\MShop.Domain\obj\Debug\net8.0\MShop.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\thanh\source\repos\MShop\MShop.Domain\obj\Debug\net8.0\MShop.Domain.AssemblyInfoInputs.cache
 C:\Users\thanh\source\repos\MShop\MShop.Domain\obj\Debug\net8.0\MShop.Domain.AssemblyInfo.cs

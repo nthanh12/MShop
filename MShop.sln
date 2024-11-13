@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShop.API", "MShop.API\MShop.API.csproj", "{8F5098FA-7D6D-4F66-AE2A-8130D80A93B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MShop.API", "MShop.API\MShop.API.csproj", "{8F5098FA-7D6D-4F66-AE2A-8130D80A93B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShop.Application", "MShop.Application\MShop.Application.csproj", "{9A432B28-968B-44B0-BAE2-FC3A7BABAFA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MShop.Application", "MShop.Application\MShop.Application.csproj", "{9A432B28-968B-44B0-BAE2-FC3A7BABAFA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShop.Domain", "MShop.Domain\MShop.Domain.csproj", "{AE34C025-CD9B-447F-83B7-4993BB118448}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MShop.Domain", "MShop.Domain\MShop.Domain.csproj", "{AE34C025-CD9B-447F-83B7-4993BB118448}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShop.Infrastructure", "MShop.Infrastructure\MShop.Infrastructure.csproj", "{069ADFFF-96B3-43A2-8E8E-9CE3DFFB35DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MShop.Infrastructure", "MShop.Infrastructure\MShop.Infrastructure.csproj", "{069ADFFF-96B3-43A2-8E8E-9CE3DFFB35DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MShop.Tests", "MShop.Tests\MShop.Tests.csproj", "{8C1DBE37-5ED1-4E3A-BF86-BA515AAF30C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{069ADFFF-96B3-43A2-8E8E-9CE3DFFB35DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{069ADFFF-96B3-43A2-8E8E-9CE3DFFB35DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{069ADFFF-96B3-43A2-8E8E-9CE3DFFB35DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1DBE37-5ED1-4E3A-BF86-BA515AAF30C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1DBE37-5ED1-4E3A-BF86-BA515AAF30C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1DBE37-5ED1-4E3A-BF86-BA515AAF30C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1DBE37-5ED1-4E3A-BF86-BA515AAF30C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
